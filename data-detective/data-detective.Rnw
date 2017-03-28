@@ -1,0 +1,228 @@
+Software Engineering data -- a detective story
+============================================
+:author:    Derek M. Jones
+:copyright: Somebody
+:backend:   slidy
+:max-width: 45em
+
+Why collecting data?
+--------------------
+
+{nbsp}
+
+Empirical Software Engineering using R
+
+{nbsp}
+
+https://www.github.com/Derek-Jones[www.github.com/Derek-Jones]
+
+* code+data
+
+* draft pdf
+
+* workshop+talk slides
+
+{nbsp}
+
+http://shape-of-code.coding-guidelines.com[The Shape of Code]
+
+Software engineering
+--------------------
+
+{nbsp}
+
+Craft activity
+
+{nbsp}
+
+No culture of data collection
+
+{nbsp}
+
+Research culture
+
+* literary criticism
+
+* philosophical discussions
+
+* mathematical organisms
+
+Data available today
+--------------------
+
+{nbsp}
+
+Public
+
+* https://www.github.com/Derek-Jones[ESEUR] -- 279 data sets (330M)
+
+* 4'ish times larger than http://openscience.us/repo[Promise] repo
+
+{nbsp}
+
+Proprietary
+
+* U.S. D.O.D. -- available to contractors
+
+* ISBSG -- 7,500 project
+
+{nbsp}
+
+Code repos, e.g., Github
+
+* raw material
+
+Finding data
+------------
+
+{nbsp}
+
+Find research producing data
+
+{nbsp}
+
+Get the data
+
+Finding the research
+--------------------
+
+Scatter gun approach
+
+* start with title of a paper or key phrases
+
+* links on Google Scholar or Google search filter on filetype:pdf
+
+* 50 pdfs within 30 minutes
+
+Ignore
+
+* names of the authors and university
+
+* journal or conference publishing the paper
+
+* year of publication, quality is ageless
+
+Does paper use data?
+
+* 5 sec scan -- down to 10 papers in 5 minutes
+
+* 30-60 sec scan -- down to none, maybe 1
+
+Get the data
+------------
+
+{nbsp}
+
+Web site
+
+* author's or group's webpage
+
+* Github, Zenodo, Figshare
+
+* publisher's website
+
+{nbsp}
+
+Researcher's computer
+
+{nbsp}
+
+Embedded in published paper
+
+Data found by year
+------------------
+
+.Source of software engineering data by year.  Based on book's bibtex file.
+<<echo=FALSE,results=hide,label=data-cnt,fig=TRUE,align="center">>=
+source("ESEUR/data-cnt.R")
+@
+
+Email the researcher
+--------------------
+
+420 emails: "I have been reading your interesting paper"
+
+.Responses to email request for data.
+[options="header", frame="topbot", grid="none", width="65%", format="csv", cols="<5s,2*>d"]
+|===============================
+Response,                         Count, Percent
+Received data,                       136,  32%
+No reply,                            132,  32%
+Pending (received a positive reply),  49,  12%
+Confidential,                         42,  10%
+No longer have the data,              20,   5%
+Best known address bounces,           11,   3%
+|===============================
+
+Biology data study
+
+Extracting data from paper (pdf)
+--------------------------------
+
+{nbsp}
+
+Numbers+Text
+
+{nbsp}
+
+Dots
+
+{nbsp}
+
+Colors
+
+Visible numbers
+---------------
+
+{nbsp}
+
+Cut & paste
+
+{nbsp}
+
+OCR
+
+{nbsp}
+
+Type in values
+
+Visible dots
+------------
+
+http://arohatgi.info/WebPlotDigitizer/[Webplot digitizer]
+
+* https://github.com/ankitrohatgi/digitizeR[digitizeR]
+
+.A few visible dots
+[caption="Figure ", label=func_points]
+image::NASA_gruhl.png[height=500]
+
+Not always visible dots
+-----------------------
+
+http://shape-of-code.coding-guidelines.com/2013/12/19/converting-graphs-in-pdf-files-to-csv-format/[code+data]
+
+.Points clumped together, overwritten
+[caption="Figure ", label=func_points]
+image::func_points.png[]
+
+Colors
+------
+
+http://shape-of-code.coding-guidelines.com/2015/03/04/extracting-the-original-data-from-a-heatmap-image/[code+data]
+
+.Heat map of numeric values.
+[caption="Figure ", label=heatmap2]
+image::heatmap2.png[height=400]
+
+Lessons learned
+---------------
+
+{nbsp}
+
+Get data while you can
+
+{nbsp}
+
+Data can be found in unexpected places
+
