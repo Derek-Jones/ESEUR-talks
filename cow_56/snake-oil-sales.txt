@@ -1,0 +1,195 @@
+Vanity project or serious research?
+===================================
+:author:    Derek M. Jones
+:email:    derek@knosof.co.uk
+:copyright: Somebody
+:backend:   slidy
+:max-width: 45em
+
+Researcher's view of their work
+-------------------------------
+
+.My amazing ideas
+[caption="Figure ", label=Book_of_Exodus_Chapter.jpg]
+image::Book_of_Exodus_Chapter_21-1_(Bible_Illustrations_by_Sweet_Media).jpg[height=600,width=600,align="center"]
+
+Industry view of academic researchers
+-------------------------------------
+
+.Who let him in?
+[caption="Figure ", label=Snake-oil_salesman]
+image::601px-Snake-oil_salesman_Professor_Thaddeus_Schmidlap_at_Enchanted_Springs_Ranch,_Boerne,_Texas,_USA_28650a.jpg[height=600,width=400,align="center"]
+
+Is this guy serious?
+--------------------
+
+{nbsp}
+
+Believable evidence provided?
+
+{nbsp}
+
+Worthwhile improvement demonstrated?
+
+Name and shame
+--------------
+
+{nbsp}
+
+Serious research
+
+* based on experimental evidence
+
+* replicated
+
+{nbsp}
+
+Vanity project
+
+Example experiment
+------------------
+
+{nbsp}
+
+The Empirical Investigation of Perspective-Based Reading,
+Basili et al
+
+{nbsp}
+
+My own experiments
+
+http://www.knosof.co.uk/dev-experiment.html
+
+
+Structure of experiment
+-----------------------
+
+{nbsp}
+
+----------
+                Group 1     Group 2
+Day 1
+                NASA A      NASA B
+                ATM         PG
+Day 2
+                Perspective-based reading training
+                PG          ATM
+                NASA B      NASA A
+----------
+
+Variables measured
+------------------
+
+{nbsp}
+
+----------
+Independent variables:
+ SUBJ          subject identifier
+ RUN           experimental run (1994, 1995)
+ RTECH         reading technique (USUAL, PBR)
+ ORDER         First/Second day
+ PRSP          perspective (NONE, DES, USER, TEST)
+ YEXP          years experience in the assigned perspective
+ DKIND         document read NASA/generic(ATM, PG)
+
+Dependent variables:
+ TDPC          percentage of true defects found
+ TDNO          number of true defects found
+ TIME          time to finish (in minutes)
+ FPNO          number of false positives
+ FPPC          percentage of false positives (derived)
+ TDPH          number of true defects found per hour (derived)
+----------
+
+Data analysis
+-------------
+
+{nbsp}
+
+Mixed-effects regression model
+
+{nbsp}
+
+Empirical Software Engineering using R
+
+http://www.knosof.co.uk/ESEUR/
+
+
+Commonly seen result
+--------------------
+
+-------------
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: cbind(TDNO, DNOTFOUND) ~ ORDER + DKIND + (1 | SUBJ)
+   Data: complete_95
+
+     AIC      BIC   logLik deviance df.resid 
+   279.9    287.7   -136.0    271.9       48 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ SUBJ   (Intercept) 0.3448   0.5872  
+Number of obs: 52, groups:  SUBJ, 13
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -0.8576     0.1948  -4.403 1.07e-05 ***
+ORDER        -0.2972     0.1327  -2.240   0.0251 *  
+DKINDNASA     0.9718     0.1366   7.115 1.12e-12 ***
+---
+Signif. codes:  0 ?***? 0.001 ?**? 0.01 ?*? 0.05 ?.? 0.1 ? ? 1
+
+Correlation of Fixed Effects:
+          (Intr) ORDER 
+ORDER     -0.319       
+DKINDNASA -0.273 -0.030
+-------------
+
+Worthwhile improvement
+----------------------
+
+{nbsp}
+
+X% faster ... Y% cheaper
+
+{nbsp}
+
+Allows lower cost people to do the job
+
+
+Basic research
+--------------
+
+{nbsp}
+
+Models of how people read
+
+http://www.knosof.co.uk/cbook/
+
+{nbsp}
+
+Eye Movements in Programming
+
+http://emipws.org/
+
+Data availability
+-----------------
+
+{nbsp}
+
+420 emails: "I have been reading your interesting paper"
+
+.Responses to email request for data.
+[options="header", frame="topbot", grid="none", width="65%", format="csv", cols="<5s,2*>d"]
+|===============================
+Response,                         Count, Percent
+Received data,                       136,  32%
+No reply,                            132,  32%
+Pending (received a positive reply),  49,  12%
+Confidential,                         42,  10%
+No longer have the data,              20,   5%
+Best known address bounces,           11,   3%
+|===============================
+
