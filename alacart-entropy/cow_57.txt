@@ -1,0 +1,193 @@
+&Aacute; la carte Entropy
+=========================
+:author:    Derek M. Jones
+:email:    derek@knosof.co.uk
+:copyright: Somebody
+:backend:   slidy
+:max-width: 45em
+
+Background
+----------
+
+{nbsp}
+
+Researchers' go to topic when they have no idea what else to talk about
+
+* http://shape-of-code.coding-guidelines.com/2015/04/04/entropy-software-researchers-go-to-topic-when-they-have-no-idea-what-else-to-talk-about/
+
+{nbsp}
+
+Reasons to ignore a SE paper 
+
+* "...major indicators of clueless nonsense..."
+
+* http://shape-of-code.coding-guidelines.com/2016/06/10/finding-the-gold-nugget-papers-in-software-engineering-research/
+
+Problems Entropy is used to solve
+---------------------------------
+
+{nbsp}
+
+Source of pretentious techno-babble
+
+{nbsp}
+
+Aggregating a list of probabilities
+
+* <equ>D_1 = (0.1, 0.3, 0.5, 0.7, 0.9)/2.5</equ>
+* <equ>D_2 = (0.2, 0.4, 0.6, 0.8)/2</equ>
+
+
+Which aggregation algorithm is best?
+------------------------------------
+
+///////////////
+D_1 = c(0.1, 0.3, 0.5, 0.7, 0.9)/2.5
+D_2 = c(0.2, 0.4, 0.6, 0.8)/2
+exp(sum(log(D_1))/length(D_1))
+exp(sum(log(D_2))/length(D_2))
+sum(D_1*log(1/D_1))
+sum(D_2*log(1/D_2))
+//////////////
+
+{nbsp}
+
+Geometric mean: <equ>\left (\prod_i^n p_i \right )^{\frac{1}{n}}</equ>
+
+* <equ>D_1=0.16</equ>
+* <equ>D_2=0.22</equ>
+
+{nbsp}
+
+Shannon entropy: <equ>\sum_i^n p_i \log \frac{1}{p_i}</equ>
+
+* <equ>D_1=1.43</equ>
+* <equ>D_2=1.28</equ>
+
+{nbsp}
+
+<equ>\log \frac{1}{\prod_i^n p_i^{p_i}}</equ>
+
+
+Shannon: leading brand of entropy
+---------------------------------
+
+{nbsp}
+
+.Buying the brand leader
+image::shannon-washes-whiter.jpg[height=300,width=800,align="center"]
+
+Other brands of Entropy are available
+-------------------------------------
+
+{nbsp}
+
+Generalized entropy
+
+* R&eacute;nyi entropy: <equ>\frac{1}{1-q}\log\left (\sum_i^n p_i^q\right)</equ>
+
+{nbsp}
+
+* Tsallis entropy: <equ>\frac{1}{q-1}\left (1-\sum_i^n p_i^q\right)</equ>
+
+{nbsp}
+
+Bespoke entropy
+
+* "Generalised information and entropy measures in physics" by Christian Beck
+
+Probability weights
+-------------------
+
+.Entropy weights
+image::entropy_weights.jpg[align="center"]
+
+////////////////////////////
+p_vals=seq(0.001, 1.001, by=0.01)
+plot(p_vals, -p_vals*log(p_vals), type="l", col="red",
+	ylim=c(0, 1),
+	xaxs="i", yaxs="i",
+	xlab="Probability", ylab="Weight")
+ 
+q=0.5
+lines(p_vals, p_vals^q, type="l", col="blue")
+q=2
+lines(p_vals, p_vals^q, type="l", col="green")
+
+legend(x="topleft", legend=c("Shannon", "Renyi/Tsallis, q=0.5", "Renyi/Tsallis, q=2"), bty="n", fill=c("red", "blue", "green"), cex=1.4)
+////////////////////////////
+
+
+Shannon assumptions
+-------------------
+
+{nbsp}
+
+Equilibrium state
+
+{nbsp}
+
+Additive, i.e., <equ>H(A, B) = H(A)+H(B)</equ>
+
+
+Relax assumptions
+-----------------
+
+{nbsp}
+
+Non-equilibrium state
+
+{nbsp}
+
+Non-additive, i.e., <equ>H(A+B) = H(A)+H(B)+(1-q)H(A)H(B)</equ>
+
+Not-Shannon processes
+---------------------
+
+{nbsp}
+
+Long-range interactions
+
+* "Initial Results of Testing Some Statistical Properties of Hard Disks Workload in Personal Computers in Terms of Non-Extensive Entropy and Long-Range Dependencies" by Dominik Strzalka
+
+{nbsp}
+
+Preferential attachment
+
+* not in equilibrium
+* measurements showing a power law
+* <equ>1 < q \le 2</equ>
+
+{nbsp}
+
+Password guessing
+
+* <equ>q=2</equ> (collision entropy)
+
+R&eacute;nyi, Shannon or Tsallis?
+---------------------------------
+
+{nbsp}
+
+Suck it and see
+
+* "Using entropy measures for comparison of software traces"
+Miranskyy, Davison, Reesor, and Murtaza
+
+{nbsp}
+
+Underlying characteristics of the problem
+
+* data showing a power law
+
+Take-away
+---------
+
+{nbsp}
+
+Entropy?  Really nothing else to talk about?
+
+{nbsp}
+
+Shannon entropy may be non-optimal
+
