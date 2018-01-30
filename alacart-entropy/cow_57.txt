@@ -23,7 +23,7 @@ Reasons to ignore a SE paper
 
 * http://shape-of-code.coding-guidelines.com/2016/06/10/finding-the-gold-nugget-papers-in-software-engineering-research/
 
-Problems Entropy is used to solve
+Problems entropy is used to solve
 ---------------------------------
 
 {nbsp}
@@ -77,7 +77,7 @@ Shannon: leading brand of entropy
 .Buying the brand leader
 image::shannon-washes-whiter.jpg[height=300,width=800,align="center"]
 
-Other brands of Entropy are available
+Other brands of entropy are available
 -------------------------------------
 
 {nbsp}
@@ -95,11 +95,12 @@ Generalized entropy
 Bespoke entropy
 
 * "Generalised information and entropy measures in physics" by Christian Beck
+* Quadratic entropy
 
 Probability weights
 -------------------
 
-.Entropy weights
+.Weightings used by Shannon and Renyi/Tsallis
 image::entropy_weights.jpg[align="center"]
 
 ////////////////////////////
@@ -130,7 +131,7 @@ Equilibrium state
 Additive, i.e., <equ>H(A, B) = H(A)+H(B)</equ>
 
 
-Relax assumptions
+Other assumptions
 -----------------
 
 {nbsp}
@@ -148,6 +149,7 @@ Not-Shannon processes
 
 Long-range interactions
 
+* memory usage
 * "Initial Results of Testing Some Statistical Properties of Hard Disks Workload in Personal Computers in Terms of Non-Extensive Entropy and Long-Range Dependencies" by Dominik Strzalka
 
 {nbsp}
@@ -178,7 +180,7 @@ Miranskyy, Davison, Reesor, and Murtaza
 
 Underlying characteristics of the problem
 
-* data showing a power law
+* data suggests a power law
 
 Take-away
 ---------
@@ -189,5 +191,5 @@ Entropy?  Really nothing else to talk about?
 
 {nbsp}
 
-Shannon entropy may be non-optimal
+Shannon mean-value may be non-optimal
 
