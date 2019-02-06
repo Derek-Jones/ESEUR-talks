@@ -1,0 +1,288 @@
+Analysis of SiP effort estimation dataset
+=========================================
+:author:    Derek M. Jones
+:email:    derek@knosof.co.uk
+:copyright: Somebody
+:backend:   slidy
+:max-width: 45em
+
+Background
+----------
+
+{nbsp}
+
+Evidence-based software engineering
+
+* http://knosof.co.uk/ESEUR
+
+{nbsp}
+
+Collecting software engineering datasets
+
+* http://knosof.co.uk/cbook
+* https://github.com/Derek-Jones/ESEUR
+* http://shape-of-code.coding-guidelines.com
+
+Start of the story
+------------------
+
+{nbsp}
+
+Conversation with Stephen Cullum
+
+* director of Software in Partnership
+* company started in 2002: data between 2004-2014
+
+{nbsp}
+
+Evidence-based theories
+
+* of practical use for those involved in building software systems
+
+
+Introduction
+------------
+
+{nbsp}
+
+Existing effort estimation research
+
+{nbsp}
+
+Patterns found in the data
+
+{nbsp}
+
+What next?
+
+Estimator incentives
+--------------------
+
+{nbsp}
+
+Bidding for work
+
+* competing for work against external companies
+* bid low to get the work, charge for extra work later
+* "I believe planners and consultants in general deliberately underestimate
+project costs because their political bosses or clients want the projects.
+Sometimes, to tell the truth is to risk your job or your contracts or the next
+contract..."
+Bent Flyvbjerg
+"How planners deal with uncomfortable knowledge:
+The dubious ethics of the American Planning Association"
+
+{nbsp}
+
+Asked, by manager, to do the work
+
+* not always a competitive environment, internally
+* impress management (estimate high, deliver under budget)
+* if estimate not accepted, other work available
+
+
+Summary of estimation data
+--------------------------
+
+{nbsp}
+
+Existing public effort estimation data
+
+* mostly bids for work
+* few hundred rows
+* information: estimate, actual
+* a few internal estimates, e.g., Hatton
+
+{nbsp}
+
+SiP dataset contains 12,299 rows
+
+* one row per developer per task
+
+Information: estimate, actual, developer, task, project, date
+
+* 10,100 unique tasks
+* 8,252 completed unique tasks
+* 22 developers
+* 20 projects
+
+Task estimates by developer & project
+-------------------------------------
+
+.Estimates per developer and estimates per project
+[caption="Figure ", label=dev-proj-freq.png]
+image::dev-proj-freq.png[height=600,width=600,align="center"]
+
+Focus on building understanding
+-------------------------------
+
+{nbsp}
+
+Understand what is going on
+
+* Build regression models
+* Hand-crafted searches
+
+{nbsp}
+
+Not black-box prediction
+
+
+Simple regression model
+-----------------------
+
+<equ>\mathit{Actual} = 1.1\times\mathit{Estimate}^{0.87}</equ>
+
+.Estimate vs. Actual: all unique tasks (left), fitted model (right; green line shows estimate==actual).
+[caption="Figure ", label=Hours-Est.png]
+image::Hours-Est.png[height=600,width=600,align="center"]
+
+Adding more variables
+---------------------
+
+<equ>\mathit{Actual} = 0.9\times\mathit{Estimate}^{0.86}\times\mathit{Project}_{ID}</equ>
+
+.Task estimate vs. actual, by project (black line shows estimate==actual)
+[caption="Figure ", label=Hours-Proj-Est.png]
+image::Hours-Proj-Est.png[height=600,width=600,align="center"]
+
+Last regression model
+---------------------
+
+{nbsp}
+
+<equ>\mathit{Actual}=0.15\times\mathit{Estimate}^{0.82}\times\mathit{Project}_{ID}\times\mathit{Developer}_{ID}\times e^{6.7\sqrt{\mathit{TS}}}</equ>
+
+{nbsp}
+
+How to use this information to save time/money?
+
+Other patterns
+--------------
+
+{nbsp}
+
+Round numbers
+
+* used to communicate an approximation of nearby values
+* divisible by two or five
+* powers of ten
+
+{nbsp}
+
+Time dependencies
+
+Total estimates
+---------------
+
+.Total number of tasks having a given estimate or actual duration
+[caption="Figure ", label=Round-Est-Act.png]
+image::Round-Est-Act.png[height=600,width=600,align="center"]
+
+Time dependencies
+-----------------
+
+{nbsp}
+
+Task events per day
+
+* serial correlation of estimates?
+* none found
+
+{nbsp}
+
+Learning
+
+{nbsp}
+
+Product evolution
+
+Task events per day
+-------------------
+
+<equ>\mathit{Days}_{total}\propto\mathit{Events}_{pd}^{-0.3}</equ>
+
+.Total days on which a given number of task estimates/starts/completions occurred
+[caption="Figure ", label=Events-per-day.png]
+image::Events-per-day.png[height=600,width=600,align="center"]
+
+Learning
+--------
+
+{nbsp}
+
+People improve with practice
+
+* estimation accuracy did not improve with practice
+
+{nbsp}
+
+Developer incentives
+
+* learning targeted towards implementation
+* estimation accuracy good enough?
+
+.Individual developer relative accuracy over estimates made
+[caption="Figure ", label=dev-est-accuracy.png]
+image::dev-est-accuracy.png[height=600,width=600,align="center"]
+
+Milestone intervals
+-------------------
+
+<equ>\mathit{tasks}_{waiting}\propto\mathit{days}^{-1.2}</equ>
+
+<equ>\mathit{tasks}_{duration}\propto\mathit{days}^{-1}</equ>
+
+.Total tasks having a given number of elapsed working days for milestone
+[caption="Figure ", label=Elapsed-day-task.png]
+image::Elapsed-day-task.png[height=600,width=600,align="center"]
+
+
+Product evolution
+-----------------
+
+.Task and developer changes, by month
+[caption="Figure ", label=monthly-totals.png]
+image::monthly-totals.png[height=600,width=600,align="center"]
+
+Useful things learned?
+----------------------
+
+{nbsp}
+
+Stephen
+
+{nbsp}
+
+Derek
+
+{nbsp}
+
+You
+
+Patterns waiting to be discovered
+---------------------------------
+
+{nbsp}
+
+Likely to be more patterns in the SiP dataset
+
+* hopefully they have practical use
+
+{nbsp}
+
+Please let me know if you write about this dataset
+
+
+Analyzing your data?
+--------------------
+
+{nbsp}
+
+I'm looking to analyse more data
+
+* a free service
+* make data public
+* will anonymize
+
+
