@@ -1,5 +1,5 @@
 
-Slides for talks around the book Empirical Software Engineering using R
+Slides for talks around the book Evidence-based Software Engineering: Based on the publicly available data
 
 [Asciidoc](http://asciidoc.org) is used to create a slidy presentation.
 
