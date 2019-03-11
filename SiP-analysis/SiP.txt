@@ -98,6 +98,7 @@ Existing public effort estimation data
 SiP dataset contains 12,299 rows
 
 * one row per developer per task
+* task information recorded at end-of-day
 
 Information: estimate, actual, developer, task, project, date
 
