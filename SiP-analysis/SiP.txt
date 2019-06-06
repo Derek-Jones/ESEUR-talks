@@ -119,15 +119,18 @@ Focus on building understanding
 
 {nbsp}
 
-Understand what is going on
+Black-box prediction
 
-* Build regression models
-* Hand-crafted searches
+* Throw everything into machine learning
+
+* Clueless button pushing
 
 {nbsp}
 
-Not black-box prediction
+Understand what is going on
 
+* Build regression models
+* Hand-crafted searches for appropriate models
 
 Simple regression model
 -----------------------
@@ -147,8 +150,8 @@ Adding more variables
 [caption="Figure ", label=Hours-Proj-Est.png]
 image::Hours-Proj-Est.png[height=600,width=600,align="center"]
 
-Last regression model
----------------------
+Final regression model
+----------------------
 
 {nbsp}
 
@@ -156,7 +159,15 @@ Last regression model
 
 {nbsp}
 
-How to use this information to save time/money?
+How might this be used to save time/money?
+
+Individuals consistently over/under-estimate
+
+   * developer training?
+
+More 'accurate' estimates
+
+   * How much accuracy is good enough?
 
 Other patterns
 --------------
@@ -207,6 +218,17 @@ Task events per day
 [caption="Figure ", label=Events-per-day.png]
 image::Events-per-day.png[height=600,width=600,align="center"]
 
+Milestone intervals
+-------------------
+
+<equ>\mathit{tasks}_{waiting}\propto\mathit{days}^{-1.2}</equ>
+
+<equ>\mathit{tasks}_{duration}\propto\mathit{days}^{-1}</equ>
+
+.Total tasks having a given number of elapsed working days between milestones
+[caption="Figure ", label=Elapsed-day-task.png]
+image::Elapsed-day-task.png[height=600,width=600,align="center"]
+
 Learning
 --------
 
@@ -226,18 +248,6 @@ Developer incentives
 .Individual developer relative accuracy over estimates made
 [caption="Figure ", label=dev-est-accuracy.png]
 image::dev-est-accuracy.png[height=600,width=600,align="center"]
-
-Milestone intervals
--------------------
-
-<equ>\mathit{tasks}_{waiting}\propto\mathit{days}^{-1.2}</equ>
-
-<equ>\mathit{tasks}_{duration}\propto\mathit{days}^{-1}</equ>
-
-.Total tasks having a given number of elapsed working days for milestone
-[caption="Figure ", label=Elapsed-day-task.png]
-image::Elapsed-day-task.png[height=600,width=600,align="center"]
-
 
 Product evolution
 -----------------

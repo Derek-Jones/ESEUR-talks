@@ -5267,6 +5267,20 @@ task information recorded at end-of-day
 <h1 id="_focus_on_building_understanding">Focus on building understanding</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Black-box prediction</p></div>
+<ul class="">
+<li>
+<span>
+Throw everything into machine learning
+</span>
+</li>
+<li>
+<span>
+Clueless button pushing
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>&#160;</p></div>
 <div class="paragraph"><p>Understand what is going on</p></div>
 <ul class="">
 <li>
@@ -5276,12 +5290,10 @@ Build regression models
 </li>
 <li>
 <span>
-Hand-crafted searches
+Hand-crafted searches for appropriate models
 </span>
 </li>
 </ul>
-<div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Not black-box prediction</p></div>
 </div>
 </div>
 <div class="sect1 slide">
@@ -5309,12 +5321,28 @@ Hand-crafted searches
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_last_regression_model">Last regression model</h1>
+<h1 id="_final_regression_model">Final regression model</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
 <div class="paragraph"><p>$\mathit{Actual}=0.15\times\mathit{Estimate}^{0.82}\times\mathit{Project}_{ID}\times\mathit{Developer}_{ID}\times e^{6.7\sqrt{\mathit{TS}}}$</p></div>
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>How to use this information to save time/money?</p></div>
+<div class="paragraph"><p>How might this be used to save time/money?</p></div>
+<div class="paragraph"><p>Individuals consistently over/under-estimate</p></div>
+<ul class="">
+<li>
+<span>
+developer training?
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>More <em>accurate</em> estimates</p></div>
+<ul class="">
+<li>
+<span>
+How much accuracy is good enough?
+</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect1 slide">
@@ -5390,6 +5418,19 @@ none found
 </div>
 </div>
 <div class="sect1 slide">
+<h1 id="_milestone_intervals">Milestone intervals</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>$\mathit{tasks}_{waiting}\propto\mathit{days}^{-1.2}$</p></div>
+<div class="paragraph"><p>$\mathit{tasks}_{duration}\propto\mathit{days}^{-1}$</p></div>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="Elapsed-day-task.png" alt="caption="Figure "" width="600" height="600" />
+</div>
+<div class="title">Figure 6. Total tasks having a given number of elapsed working days between milestones</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
 <h1 id="_learning">Learning</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
@@ -5419,20 +5460,7 @@ estimation accuracy good enough?
 <div class="content">
 <img src="dev-est-accuracy.png" alt="caption="Figure "" width="600" height="600" />
 </div>
-<div class="title">Figure 6. Individual developer relative accuracy over estimates made</div>
-</div>
-</div>
-</div>
-<div class="sect1 slide">
-<h1 id="_milestone_intervals">Milestone intervals</h1>
-<div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>$\mathit{tasks}_{waiting}\propto\mathit{days}^{-1.2}$</p></div>
-<div class="paragraph"><p>$\mathit{tasks}_{duration}\propto\mathit{days}^{-1}$</p></div>
-<div class="imageblock" style="text-align:center;">
-<div class="content">
-<img src="Elapsed-day-task.png" alt="caption="Figure "" width="600" height="600" />
-</div>
-<div class="title">Figure 7. Total tasks having a given number of elapsed working days for milestone</div>
+<div class="title">Figure 7. Individual developer relative accuracy over estimates made</div>
 </div>
 </div>
 </div>
