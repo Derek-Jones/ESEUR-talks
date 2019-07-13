@@ -1,0 +1,221 @@
+Evidence for benefits of using strong typing
+============================================
+:author:    Derek M. Jones
+:email:    derek@knosof.co.uk
+:copyright: Somebody
+:backend:   slidy
+:max-width: 45em
+
+Background
+----------
+
+{nbsp}
+
+Evidence-based software engineering
+
+* http://knosof.co.uk/ESEUR
+
+{nbsp}
+
+Collecting software engineering datasets
+
+* https://github.com/Derek-Jones/ESEUR
+* http://shape-of-code.coding-guidelines.com
+* http://knosof.co.uk/cbook
+
+== What is typing?
+
+Values have a type, e.g., integer, character, boolean, string
+
+Static typing and/or dynamic typing
+
+Operators can only be applied to values having certain types
+
+{nbsp}
+
+--------------
+     a + b
+--------------
+
+* integer plus integer
+* integer plus floating-point
+* integer plus character
+* character plus character
+
+== User defined types
+
+{nbsp}
+
+---------------
+type degrees_C int;
+type degrees_F int;
+
+degrees_C a;
+degrees_F b;
+
+
+      a + b
+---------------
+
+== Strong typing
+
+Strongly typed language
+
+* marketing term
+
+Strong typing is a continuum
+
+* Languages that specify more typing rules
+* Amount of support for user defined types
+
+C{nbsp}++ and Ada equally strongly typed
+
+* https://shape-of-code.coding-guidelines.com/2014/04/17/c-vs-ada-which-language-is-more-strongly-typed/
+
+* Use of typing is cultural
+
+Strongly typed source code
+
+* No such thing as a strongly typed language
+
+== Claimed benefits
+
+{nbsp}
+
+Code is easier to maintain
+
+{nbsp}
+
+Code contains fewer faults
+
+{nbsp}
+
+Documentation of intent
+
+== Factors ignored
+
+{nbsp}
+
+Developer knowledge of language
+
+{nbsp}
+
+Developer ability to use strong typing
+
+{nbsp}
+
+Existing use of typing in code base
+
+
+== Experimental evidence
+
+https://shape-of-code.coding-guidelines.com/2014/08/27/evidence-for-the-benefits-of-strong-typing-where-is-it/
+
+{nbsp}
+
+Running an experiment
+
+* obtain some subjects
+* select two languages
+* select some problems
+* subjects solve problems using different languages
+
+== Results - Gannon
+
+{nbsp}
+
+BCPL and BCPL plus a string type and simple structures
+
+* both weakly typed by today's standards
+
+Student subjects
+
+Problem
+
+* given two weeks to solve
+* solutions contained 50-300 lines
+
+{nbsp}
+
+Results measured
+
+* Batch processing
+* number of errors during development
+* number of runs needed to create a working program
+
+== Results - Prechelt & Tichy
+
+{nbsp}
+
+Two C compilers
+
+* K&R C:
+--------------
+ int f() int a; {...}
+--------------
+* ANSI C:
+--------------
+ int f(int a) {...}
+--------------
+
+{nbsp}
+
+Result measured
+
+* time taken to solve the problem
+
+== Results - Hanenberg et al
+
+{nbsp}
+
+Java and Groovy
+
+Student subjects
+
+Multiple tasks
+
+* Modify existing code
+* API focused
+
+{nbsp}
+
+Result measured
+
+* time to complete the task 
+
+== Results
+
+{nbsp}
+
+Mixed effects regression model
+
+{nbsp}
+
+Biggest performance difference is between people
+
+* Gannon: people/language effect
+* Prechelt & Tichy: five times larger than effects of argument checking
+* Mayer, Hanenberg et al: approximately same as language/problem interaction
+
+{nbsp}
+
+Next biggest effect is learning
+
+{nbsp}
+
+Smallest effect detected - language used
+
+* Prechelt & Tichy: no argument checking slowed implementation time by around 10%
+* Mayer, Hanenberg et al: interaction between language and problem
+
+== Analyzing your data?
+
+{nbsp}
+
+I'm looking to analyse more data
+
+* a free service
+* make data public
+* will anonymize
+
+
