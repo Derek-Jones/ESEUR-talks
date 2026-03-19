@@ -107,6 +107,15 @@ Number of operations per second, assuming
 * instruction execution time is constant
 * one instruction per arithmetic/logical operation
 
+Computer surveys
+----------------
+
+"A Survey of Automatic Digital Computers", Office of Naval Research, 1953
+
+.Circle Computer characteristics
+[caption="Figure ", label=png.jpg]
+image::Circle-comp-character.png[height=500,width=550,align="center"]
+
 Knight's formula
 ----------------
 
