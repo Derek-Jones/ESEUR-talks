@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Solving maths problems with LLMs</title>
+<title>Modelling software process behaviours with LLM assistants</title>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="copyright" content="Copyright &#169; Somebody" />
 <meta name="generator" content="AsciiDoc 10.2.1" />
@@ -5061,16 +5061,60 @@ else
 </head>
 <body class="article" style="max-width:45em">
 <div id="header" class="slide">
-<h1>Solving maths problems with LLMs</h1>
+<h1>Modelling software process behaviours with LLM assistants</h1>
 <span id="author">Derek M. Jones</span><br />
 <span id="email"><code>&lt;<a href="mailto:derek@knosof.co.uk">derek@knosof.co.uk</a>&gt;</code></span><br />
 </div>
 <div class="sect1 slide">
+<h1 id="_about_me">About me</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Compiler front ends/code generators</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Source code analysis</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Industrial research in software engineering</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Finding me</p></div>
+<ul class="">
+<li>
+<span>
+Twitter: @evidenceSE
+</span>
+</li>
+<li>
+<span>
+Discord: <a href="https://discord.gg/uq6Vb92G">https://discord.gg/uq6Vb92G</a>
+</span>
+</li>
+<li>
+<span>
+Github: <a href="https://github.com/Derek-Jones">https://github.com/Derek-Jones</a>
+</span>
+</li>
+<li>
+<span>
+Blog: <a href="https://shape-of-code.com">https://shape-of-code.com</a>
+</span>
+</li>
+<li>
+<span>
+<a href="mailto:derek@knosof.co.uk">derek@knosof.co.uk</a>
+</span>
+</li>
+<li>
+<span>
+London based
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
 <h1 id="_evidence_based_software_engineering">Evidence-based Software Engineering</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>Evidence-based Software Engineering based on the publicly available data<br />
-pdf+code+all data freely available <a href="http://knosof.co.uk/ESEUR">http://knosof.co.uk/ESEUR</a></p></div>
-<div class="paragraph"><p>Shape of code <a href="https://shape-of-code.com">https://shape-of-code.com</a></p></div>
+<div class="paragraph"><p>Evidence-based Software Engineering based on the publicly available data</p></div>
+<div class="paragraph"><p>pdf+code+all data freely available: <a href="http://knosof.co.uk/ESEUR">http://knosof.co.uk/ESEUR</a></p></div>
 <div class="imageblock" style="text-align:center;">
 <div class="content">
 <img src="ESEUR-Cover.jpg" alt="caption="Figure "" width="500" height="650" />
@@ -5079,14 +5123,39 @@ pdf+code+all data freely available <a href="http://knosof.co.uk/ESEUR">http://kn
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_what_are_llms_good_for">What are LLMs good for?</h1>
+<h1 id="_overview">Overview</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Search engine for useful theorems and models</p></div>
+<div class="paragraph"><p>Mapping a software question to mathematical question</p></div>
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Great at finding <em>close</em> solutions</p></div>
+<div class="paragraph"><p>Fully specifying the question</p></div>
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Hallucinations</p></div>
+<div class="paragraph"><p>Chain-of-Thought (CoT)</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Verifying the answers</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_llms_are_getting_better">LLMs are getting better</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>LLMs I use for maths problems</p></div>
+<ul class="">
+<li>
+<span>
+First choice: Deepseek, Kimi.  Recently GLM5.1
+</span>
+</li>
+<li>
+<span>
+Mostly ignored, until recently: ChatGPT, Grok
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Output sometimes just stops</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Algebra mistakes (just like people)</p></div>
 <ul class="">
 <li>
 <span>
@@ -5098,114 +5167,348 @@ pdf+code+all data freely available <a href="http://knosof.co.uk/ESEUR">http://kn
 drop variables
 </span>
 </li>
-<li>
-<span>
-suggestions not applicable
-</span>
-</li>
 </ul>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Sometimes persist in going down the wrong rabbit hole (just like people)</p></div>
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_which_llm">Which LLM?</h1>
+<h1 id="_asking_the_right_question">Asking the right question</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>LLMs I use for maths problems</p></div>
+<div class="paragraph"><p>Asking a software question produces</p></div>
 <ul class="">
 <li>
 <span>
-kimi
+opinions from blog posts
 </span>
 </li>
 <li>
 <span>
-chatGPT5 Thinking
-</span>
-</li>
-<li>
-<span>
-deepseek
-</span>
-</li>
-<li>
-<span>
-grok
+summaries of published research
 </span>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect1 slide">
-<h1 id="_issues_with_the_question">Issues with the question</h1>
-<div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Ambiguities in the specification</p></div>
-<ol class="arabic">
-<li>
-<span>
-The phrase "the probability of going via state j is 1/j" is a bit ambiguous.<br />
-To interpret it correctly, let&#8217;s consider that at any given state i, the ball<br />
-can move to any state j where j&lt;i, and the &#8230;
-</span>
-</li>
-<li>
-<span>
-Another interpretation is that from state i, the ball moves to any state j &#8230;
-</span>
-</li>
-<li>
-<span>
-Given the confusion, let&#8217;s consider that the process is a Markov chain where &#8230;
-</span>
-</li>
-<li>
-<span>
-Perhaps a better interpretation is that the process is a sequence where from &#8230;
-</span>
+<div class="paragraph"><p>Obtaining a mathematical answer requires asking a mathematical question</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Software question has to be framed in mathematical terms</p></div>
 <ul class="">
 <li>
 <span>
-<em><span class="small">Kimi conversation: <a href="https://www.kimi.com/share/d3mg0pblmiu3upjf9qbg">https://www.kimi.com/share/d3mg0pblmiu3upjf9qbg</a></span></em>
+creativity
+</span>
+</li>
+<li>
+<span>
+lateral thinking
+</span>
+</li>
+<li>
+<span>
+prior experience is very helpful
 </span>
 </li>
 </ul>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Iterative process</p></div>
+<ul class="">
+<li>
+<span>
+prompt tuning
+</span>
 </li>
-</ol>
-<div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>No analytic solution</p></div>
-<div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Maybe an algorithmic solution</p></div>
+</ul>
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_learn_new_maths">Learn new maths</h1>
+<h1 id="_chain_of_thought">Chain-of-Thought</h1>
 <div class="sectionbody" style="max-width:45em">
 <div class="paragraph"><p>&#160;</p></div>
-<div class="paragraph"><p>Polylogarithms: $Li_s(z)=\sum_{k=1}^\infty\frac{z^k}{k^s}$</p></div>
-<div class="paragraph"><p>Fokker-Planck equation</p></div>
+<div class="paragraph"><p>The series of intermediate reasoning steps leading to the answer.<br />
+Appears as human-like reasoning.</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Deepseek, Kimi, GLM5.1 produce CoT<br />
+ChatGPT, Grok recently started producing CoT</p></div>
 <div class="paragraph"><p>&#160;</p></div>
 <div class="imageblock" style="text-align:center;">
 <div class="content">
-<img src="surgeon+suit-having-fun.jpg" alt="caption="Figure "" width="600" height="600" />
+<img src="kimi-approach_CoT.png" alt="caption="Figure "" width="950" height="450" />
 </div>
-<div class="title">Figure 1. Have fun</div>
 </div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_chain_of_thought_output_is_essential">Chain-of-Thought output is essential</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Does the LLM interpret the question correctly?</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Check (human and LLM) assumptions are reasonable</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Verify the answer by stepping through the derivation</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Suggest different approaches to modelling the problem</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_kimi_cot_interpretation_of_question">Kimi CoT interpretation of question</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="Deepseek-quest-interp-CoT.png" alt="caption="Figure "" width="1150" height="850" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_you_will_have_to_learn_new_maths">You will have to learn new maths</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Polylogarithms: $Li_s(z)=\sum_{k=1}^\infty\frac{z^k}{k^s}$</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Wikipedia, Grokipedia</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Research papers, blogs, books</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Ask another LLM</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_example_1">Example 1</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>What is the expected number of lines of code, $L$, in the next release, $r$, of a program</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Model as a recurrence relation</p></div>
+<div class="paragraph"><p>$L_{r+1}=a*L_r+b$</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>Solve the following recurrence relation
+\$L_{r+1}=a*L_r+b\$ where \$a\$ and \$b\$ are constants</code></pre>
+</div></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Update to include number of developers, $D$, in model</p></div>
+<div class="paragraph"><p>$L_{r+1}=a*L_r+b*D_r$<br />
+$D_r=c*D_{r-1}+d*L_{r-1}$</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>Solve the following two recurrence relations for \$L\$
+\$L_{r+1}=a*L_r+b*D_r\$ and
+\$D_r=c*D_{r-1}+d*L_{r-1}\$
+\$a\$, \$b\$, \$c\$ and \$d\$ are constants</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_example_2">Example 2</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>How many distinct statement sequences can be written using</p></div>
+<ul class="">
+<li>
+<span>
+$N$ if-statements and
+</span>
+</li>
+<li>
+<span>
+$S-N$ assignment statements
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>{
+s1;
+if (c1) {
+   s2;
+   s3;
+   }
+}</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_mathematical_model_of_example_2">Mathematical model of example 2</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Treat each line of code as a step on a 2-D lattice</p></div>
+<ul class="">
+<li>
+<span>
+an assignment statement occupying a line is one step down the page
+</span>
+</li>
+<li>
+<span>
+an if-statement occupies both a line and indented to the right
+</span>
+</li>
+<li>
+<span>
+end of if-statement indents to the left
+</span>
+</li>
+</ul>
+<div class="imageblock" style="text-align:center;">
+<div class="content">
+<img src="750px-Motzkin4.png" alt="caption="Figure "" width="500" height="350" />
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_mathematical_question">Mathematical question</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>How many valid Dyck paths are there of length $S$,
+where the path consists of:
+Exactly $N$ upward steps (1,1).
+Exactly $N$ downward steps (1,−1).
+The remaining steps are $S-2*N$ horizontal steps (1,0).
+These paths must never dip below the x-axis,
+and they must return to the x-axis at the end.</code></pre>
+</div></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Answer, after a few iterations of prompt tuning</p></div>
+<div class="paragraph"><p>$\frac{S!}{{(N+1)!N!}(S-2*N)!}$</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_more_complicated_question">More complicated question</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>A particle on a two-dimensional lattice can move as follows:</p></div>
+<ul class="">
+<li>
+<span>
+from ($x,y$) to ($x+1, y$) with probability $R$,
+</span>
+</li>
+<li>
+<span>
+from ($x,y$) to ($x+1, y+1$) with probability $U$,
+</span>
+</li>
+<li>
+<span>
+from ($x,y$) to ($x+1, y-1$) with probability $D$,
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>where $U \le D$ and $R+U+D = 1$</p></div>
+<div class="paragraph"><p>Starting at the point (1,1) what is the distribution of the<br />
+number of steps needed to reach the first point where $y=0$</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_example_3">Example 3</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>What is the expected fraction of a program's functions/methods
+that have not been modified, after fixing all reported faults.</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_mathematical_model_of_example_3">Mathematical model of example 3</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>$m$ identical boxes can each hold a maximum of $L$ balls,
+and there are $b$ identical balls,
+balls are uniformly at randomly placed in non-full boxes,
+where $L &lt; m$ and $m*L &gt; b$ and
+$b$ can have a similar size as $m$
+What is the expected number of boxes that do not contain a ball</code></pre>
+</div></div>
+<div class="paragraph"><p>“uniformly at randomly” is the mathematical way of saying<br />
+“the behavior is random with all possibilities being equally likely”</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_add_some_real_world_behavior">Add some real-world behavior</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Functions have different sizes, in LOC,<br />
+size distribution is a power law</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>There are $m$ boxes, $B_n$, $1 &lt;= n &lt;= m$ where the
+number of boxes that can hold $L$ balls, $1 &lt;= L &lt;= T$,
+is proportional to $L^{-b}$,
+and there are $F$ identical balls,
+balls are uniformly at randomly placed in non-full boxes,
+where the number of balls $F$ is much less than
+the available places to hold them.
+What is the expected number of boxes that do not contain a ball</code></pre>
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_add_more_real_world_behavior">Add more real-world behavior</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Some program functionality is used more often than other<br />
+frequently used functions are more likely to involve a fault report.</p></div>
+<div class="paragraph"><p>Model using preferential attachment</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><code>There are $m$ boxes, $B_n$, $1 &lt;= n &lt;= m$
+where the number of boxes that can hold $L$ balls, $1 &lt;= L &lt;= T$,
+is proportional to $L^{-b}$, and there are $F$ identical balls,
+balls are randomly placed in non-full boxes
+with probability proportional to $L*(1+O)$
+where $O$ is the number of balls currently in the box,
+the number of balls $F$ is much less than the available places
+to hold them, and $2 &lt; b$.
+What is the expected number of boxes that do not contain a ball</code></pre>
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
 <h1 id="_is_the_answer_correct">Is the answer correct?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>Check the derivation</p></div>
+<div class="paragraph"><p>&#160;</p></div>
 <div class="paragraph"><p>Do other LLMs give the same answer?</p></div>
-<div class="paragraph"><p>$E_m=\frac{M}{\zeta(b)}Li_b(e^{-\frac{F}{M}\frac{\zeta(b)}{\zeta(b-1)}}) \approx Me^{-\frac{F}{2M}}$</p></div>
-<div class="paragraph"><p><em><span class="small">https://shape-of-code.com/2025/09/07/percentage-of-methods-containing-no-reported-faults/</span></em></p></div>
-<div class="paragraph"><p>Plot the equation</p></div>
+<div class="paragraph"><p>$X=\sum_{k=1}^N ...$<br />
+$X=\sum_{k=0}^{N-1} ...$</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Check the derivation: needs CoT</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Plot the equation:
+$E_m=\frac{M}{\zeta(b)}Li_b(e^{-\frac{F}{M}\frac{\zeta(b)}{\zeta(b-1)}}) \approx Me^{-\frac{F}{2M}}$<br /></p></div>
 <div class="imageblock" style="text-align:center;">
 <div class="content">
 <img src="meth-fault-uniform.png" alt="caption="Figure "" width="600" height="600" />
 </div>
-<div class="title">Figure 2. Fraction of fault free methods after given number of fault reports</div>
+<div class="title">Figure 1. Fraction of fault free methods after given number of fault reports</div>
 </div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_more_detailed_discussion">More detailed discussion</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p>Articles involving an LLM assistant solving maths problems</p></div>
+<div class="paragraph"><p>&#160;</p></div>
+<div class="paragraph"><p><em><span class="small">https://shape-of-code.com/2026/04/26/working-with-an-llm-maths-assistant-to-model-software-processes/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2026/04/19/predicting-reports-of-new-faults-by-counting-past-reports/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2026/01/18/formal-methods-and-llm-generated-mathematical-proofs/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2026/01/04/modelling-time-to-next-reported-fault/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2025/10/19/finding-links-between-gcc-source-code-and-the-c-standard/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2025/09/07/percentage-of-methods-containing-no-reported-faults/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2024/09/29/modeling-program-loc-growth-with-recurrence-equations/</span></em><br />
+<em><span class="small">https://shape-of-code.com/2024/09/15/number-of-statement-sequences-possible-using-n-if-statements/</span></em></p></div>
 </div>
 </div>
 <div class="sect1 slide">
